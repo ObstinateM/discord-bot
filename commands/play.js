@@ -34,6 +34,12 @@ module.exports = {
       await interaction.deferReply();
 
       const query = interaction.options.get('query').value;
+      if(query == 'https://www.youtube.com/watch?v=_Tsgltj7i50&list=PLG_6wXZMYb5SP0j4tvmkV9QKwaCHj4c16' || query == 'https://www.youtube.com/watch?v=_Tsgltj7i50&list=PLG_6wXZMYb5SP0j4tvmkV9QKwaCHj4c16&ab_channel=PNL-Topic'){
+          return void interaction.followUp({
+          content: 'BIEN OU QUOI LE RP PNL ENCULER ? CHANGE UN PEU MEEEEEEEEEERDE',
+          });
+      }
+      console.log(query);
       const searchResult = await player
         .search(query, {
           requestedBy: interaction.user,

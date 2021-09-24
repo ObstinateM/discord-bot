@@ -48,6 +48,7 @@ player.on('queueEnd', queue => {
 
 client.once('ready', async () => {
   console.log('Ready!');
+  client.user.setActivity('Salut à tous c\'est CHANTOOOOOAL!!!!');
 });
 
 client.once('reconnecting', () => {
@@ -61,9 +62,10 @@ client.once('disconnect', () => {
 client.on("messageCreate", async (message) => {
   if (message.author.bot || !message.guild) return;
   if (!client.application?.owner) await client.application?.fetch();
-
+  console.log('MA BITE PUTIN');
   if (message.content === "!deploy" && message.author.id === client.application?.owner?.id) {
-      await message.guild.commands.set(client.commands).then(() => {
+	console.log('?????????????');      
+await message.guild.commands.set(client.commands).then(() => {
         message.reply("Deployed!");
       })
       .catch((err) => {
